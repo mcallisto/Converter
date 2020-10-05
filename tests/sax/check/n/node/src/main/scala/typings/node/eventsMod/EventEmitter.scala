@@ -13,7 +13,7 @@ class EventEmitter ()
 @JSImport("events", "EventEmitter")
 @js.native
 object EventEmitter extends js.Object {
-  def listenerCount(emitter: EventEmitter, event: String): Double = js.native
-  def listenerCount(emitter: EventEmitter, event: js.Symbol): Double = js.native
+  def listenerCount(emitter: typings.node.NodeJS.EventEmitter, event: String): Double = js.native
+  def listenerCount(emitter: typings.node.NodeJS.EventEmitter, event: js.Symbol): Double = js.native
 }
 

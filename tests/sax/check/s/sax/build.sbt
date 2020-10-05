@@ -1,11 +1,11 @@
 organization := "org.scalablytyped"
 name := "sax"
-version := "1.x-cca7a4"
+version := "1.x-7e0427"
 scalaVersion := "2.13.3"
 enablePlugins(ScalaJSPlugin)
 libraryDependencies ++= Seq(
   "com.olvind" %%% "scalablytyped-runtime" % "2.1.0",
-  "org.scalablytyped" %%% "node" % "9.6.x-171ad7",
+  "org.scalablytyped" %%% "node" % "9.6.x-3b29bc",
   "org.scalablytyped" %%% "std" % "0.0-unknown-f7d52a")
 publishArtifact in packageDoc := false
 scalacOptions ++= List("-encoding", "utf-8", "-feature", "-g:notailcalls", "-language:implicitConversions", "-language:higherKinds", "-language:existentials")
