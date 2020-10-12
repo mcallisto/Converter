@@ -4,12 +4,14 @@ import scala.scalajs.js
 import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
-@JSGlobalScope
-@js.native
-object global extends js.Object {
-  val Error: typings.std.Error = js.native
-  val Function: js.Function = js.native
-  val Promise: js.Promise[js.Any] = js.native
-  val RegExp: typings.std.RegExp = js.native
+object global {
+  @scala.inline
+  def Error: typings.std.Error = js.Dynamic.global.selectDynamic("Error").asInstanceOf[typings.std.Error]
+  @scala.inline
+  def Function: js.Function = js.Dynamic.global.selectDynamic("Function").asInstanceOf[js.Function]
+  @scala.inline
+  def Promise: js.Promise[js.Any] = js.Dynamic.global.selectDynamic("Promise").asInstanceOf[js.Promise[js.Any]]
+  @scala.inline
+  def RegExp: typings.std.RegExp = js.Dynamic.global.selectDynamic("RegExp").asInstanceOf[typings.std.RegExp]
 }
 

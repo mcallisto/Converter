@@ -9,23 +9,30 @@ import scala.scalajs.js
 import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
-@JSImport("@stardust-ui/react-component-ref/dist/es/RefForward", JSImport.Namespace)
-@js.native
-object refForwardMod extends js.Object {
+object refForwardMod {
   @js.native
   trait RefForward
     extends Component[RefProps, js.Object, js.Any] {
     def handleRefOverride(node: HTMLElement): Unit = js.native
   }
   
+  @JSImport("@stardust-ui/react-component-ref/dist/es/RefForward", JSImport.Default)
   @js.native
   class default () extends RefForward
   
   /* static members */
-  @js.native
-  object default extends js.Object {
-    var displayName: String = js.native
-    var propTypes: Children | InnerRef = js.native
+  object default {
+    @JSImport("@stardust-ui/react-component-ref/dist/es/RefForward", JSImport.Default)
+    @js.native
+    val ^ : js.Any = js.native
+    @scala.inline
+    def displayName: String = ((^ .asInstanceOf[js.Dynamic]).selectDynamic("displayName")).asInstanceOf[String]
+    @scala.inline
+    def displayName_=(x: String): Unit = (^ .asInstanceOf[js.Dynamic]).updateDynamic("displayName")(x.asInstanceOf[js.Any])
+    @scala.inline
+    def propTypes: Children | InnerRef = ((^ .asInstanceOf[js.Dynamic]).selectDynamic("propTypes")).asInstanceOf[Children | InnerRef]
+    @scala.inline
+    def propTypes_=(x: Children | InnerRef): Unit = (^ .asInstanceOf[js.Dynamic]).updateDynamic("propTypes")(x.asInstanceOf[js.Any])
   }
   
 }

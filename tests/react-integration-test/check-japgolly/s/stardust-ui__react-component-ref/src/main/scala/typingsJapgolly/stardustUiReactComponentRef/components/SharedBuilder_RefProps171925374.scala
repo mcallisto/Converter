@@ -1,5 +1,6 @@
 package typingsJapgolly.stardustUiReactComponentRef.components
 
+import japgolly.scalajs.react.raw.React.Ref
 import typingsJapgolly.StBuildingComponent
 import scala.scalajs.js
 import scala.scalajs.js.`|`
@@ -10,7 +11,7 @@ class SharedBuilder_RefProps171925374[R <: js.Object] (val args: js.Array[js.Any
   extends AnyVal
      with StBuildingComponent[R] {
   @scala.inline
-  def innerRef(value: japgolly.scalajs.react.raw.React.Ref): this.type = set("innerRef", value.asInstanceOf[js.Any])
+  def innerRef(value: Ref): this.type = set("innerRef", value.asInstanceOf[js.Any])
   @scala.inline
   def innerRefNull: this.type = set("innerRef", null)
 }

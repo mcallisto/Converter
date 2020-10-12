@@ -7,9 +7,7 @@ import scala.scalajs.js
 import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
-@JSImport("create-error", JSImport.Namespace)
-@js.native
-object mod extends js.Object {
+object mod {
   @js.native
   trait Error[T /* <: Err */]
     extends typings.std.Error
@@ -17,13 +15,23 @@ object mod extends js.Object {
        with Instantiable1[/* message */ String, T]
        with Instantiable2[js.UndefOr[/* message */ String], /* obj */ js.Any, T]
   
-  def apply(): Error[Error[Err]] = js.native
-  def apply[T /* <: Error[Error[Err]] */](Target: Error[Error[Err]]): T = js.native
-  def apply[T /* <: Error[Error[Err]] */](Target: Error[Error[Err]], name: js.UndefOr[scala.Nothing], properties: js.Any): T = js.native
-  def apply[T /* <: Error[Error[Err]] */](Target: Error[Error[Err]], name: String): T = js.native
-  def apply[T /* <: Error[Error[Err]] */](Target: Error[Error[Err]], name: String, properties: js.Any): T = js.native
-  def apply[T /* <: Error[Error[Err]] */](name: String): T = js.native
-  def apply[T /* <: Error[Error[Err]] */](name: String, properties: js.Any): T = js.native
+  @JSImport("create-error", JSImport.Namespace)
+  @js.native
+  val ^ : js.Any = js.native
+  @scala.inline
+  def apply(): Error[Error[Err]] = ((^ .asInstanceOf[js.Dynamic]).apply()).asInstanceOf[Error[Error[Err]]]
+  @scala.inline
+  def apply[T /* <: Error[Error[Err]] */](Target: Error[Error[Err]]): T = ((^ .asInstanceOf[js.Dynamic]).apply(Target.asInstanceOf[js.Any])).asInstanceOf[T]
+  @scala.inline
+  def apply[T /* <: Error[Error[Err]] */](Target: Error[Error[Err]], name: js.UndefOr[scala.Nothing], properties: js.Any): T = ((^ .asInstanceOf[js.Dynamic]).apply(Target.asInstanceOf[js.Any], name.asInstanceOf[js.Any], properties.asInstanceOf[js.Any])).asInstanceOf[T]
+  @scala.inline
+  def apply[T /* <: Error[Error[Err]] */](Target: Error[Error[Err]], name: String): T = ((^ .asInstanceOf[js.Dynamic]).apply(Target.asInstanceOf[js.Any], name.asInstanceOf[js.Any])).asInstanceOf[T]
+  @scala.inline
+  def apply[T /* <: Error[Error[Err]] */](Target: Error[Error[Err]], name: String, properties: js.Any): T = ((^ .asInstanceOf[js.Dynamic]).apply(Target.asInstanceOf[js.Any], name.asInstanceOf[js.Any], properties.asInstanceOf[js.Any])).asInstanceOf[T]
+  @scala.inline
+  def apply[T /* <: Error[Error[Err]] */](name: String): T = ((^ .asInstanceOf[js.Dynamic]).apply(name.asInstanceOf[js.Any])).asInstanceOf[T]
+  @scala.inline
+  def apply[T /* <: Error[Error[Err]] */](name: String, properties: js.Any): T = ((^ .asInstanceOf[js.Dynamic]).apply(name.asInstanceOf[js.Any], properties.asInstanceOf[js.Any])).asInstanceOf[T]
   type Err = typings.std.Error
 }
 

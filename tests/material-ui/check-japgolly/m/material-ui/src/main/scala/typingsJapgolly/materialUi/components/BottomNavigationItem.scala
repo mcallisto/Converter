@@ -1,6 +1,5 @@
 package typingsJapgolly.materialUi.components
 
-import typingsJapgolly.StBuildingComponent
 import typingsJapgolly.materialUi.MaterialUI.BottomNavigation.BottomNavigationItemProps
 import scala.scalajs.js
 import scala.scalajs.js.`|`
@@ -11,19 +10,11 @@ object BottomNavigationItem {
   @js.native
   object component extends js.Object
   
+  def withProps(p: BottomNavigationItemProps): SharedBuilder_BottomNavigationItemProps226372499[typingsJapgolly.materialUi.bottomNavigationItemMod.BottomNavigationItem] = new SharedBuilder_BottomNavigationItemProps226372499[typingsJapgolly.materialUi.bottomNavigationItemMod.BottomNavigationItem](js.Array(this.component, p.asInstanceOf[js.Any]))
   @scala.inline
-  class Builder (val args: js.Array[js.Any])
-    extends AnyVal
-       with StBuildingComponent[typingsJapgolly.materialUi.bottomNavigationItemMod.BottomNavigationItem] {
-    @scala.inline
-    def className(value: String): this.type = set("className", value.asInstanceOf[js.Any])
-  }
-  
-  def withProps(p: BottomNavigationItemProps): Builder = new Builder(js.Array(this.component, p.asInstanceOf[js.Any]))
-  @scala.inline
-  def apply(children: Double): Builder = {
+  def apply(children: Double): SharedBuilder_BottomNavigationItemProps226372499[typingsJapgolly.materialUi.bottomNavigationItemMod.BottomNavigationItem] = {
     val __props = js.Dynamic.literal(children = children.asInstanceOf[js.Any])
-    new Builder(js.Array(this.component, __props.asInstanceOf[BottomNavigationItemProps]))
+    new SharedBuilder_BottomNavigationItemProps226372499[typingsJapgolly.materialUi.bottomNavigationItemMod.BottomNavigationItem](js.Array(this.component, __props.asInstanceOf[BottomNavigationItemProps]))
   }
 }
 

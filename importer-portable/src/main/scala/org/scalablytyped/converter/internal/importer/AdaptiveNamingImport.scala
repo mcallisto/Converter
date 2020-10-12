@@ -17,7 +17,7 @@ final class AdaptiveNamingImport(private val rewrites: Map[IArray[TsIdent], Qual
       /* hack/shortcut: all qualified idents are fully qualified, which means only abstract things should have length one */
       case TsQIdent(IArray.exactlyOne(one: TsIdentSimple)) => QualifiedName(IArray(ImportName(one)))
       case TsQIdent(parts) if rewrites.contains(parts) => rewrites(parts)
-      /* this branch is mostly for enum members now, which don't have codepaths */
+      /* this branch is mostly for enum members which don't have codepaths, or last minute hoisted members which won't be in `rewrites` */
       case TsQIdent(IArray.initLast(parent, current: TsIdentSimple)) => rewrites(parent) + ImportName(current)
     }
 

@@ -5,15 +5,17 @@ import scala.scalajs.js
 import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
-@JSImport("@stardust-ui/react-component-ref/dist/es/handleRef", JSImport.Namespace)
-@js.native
-object handleRefMod extends js.Object {
+object handleRefMod {
+  @JSImport("@stardust-ui/react-component-ref/dist/es/handleRef", JSImport.Namespace)
+  @js.native
+  val ^ : js.Any = js.native
   /**
     * The function that correctly handles passing refs.
     *
     * @param ref An ref object or function
     * @param node A node that should be passed by ref
     */
-  def default[N](ref: Ref, node: N): Unit = js.native
+  @scala.inline
+  def default[N](ref: Ref, node: N): Unit = ((^ .asInstanceOf[js.Dynamic]).applyDynamic("default")(ref.asInstanceOf[js.Any], node.asInstanceOf[js.Any])).asInstanceOf[Unit]
 }
 

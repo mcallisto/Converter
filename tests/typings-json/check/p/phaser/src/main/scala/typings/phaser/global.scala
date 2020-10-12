@@ -5,18 +5,29 @@ import scala.scalajs.js
 import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
-@JSGlobalScope
-@js.native
-object global extends js.Object {
+object global {
+  @JSGlobal("Phaser")
   @js.native
   class Phaser ()
     extends typings.phaser.Phaser
   
-  @js.native
-  object PIXI extends js.Object {
-    var CANVAS_RENDERER: Double = js.native
-    var VERSION: String = js.native
-    var WEBGL_RENDERER: Double = js.native
+  object PIXI {
+    @JSGlobal("PIXI")
+    @js.native
+    val ^ : js.Any = js.native
+    @scala.inline
+    def CANVAS_RENDERER: Double = ((^ .asInstanceOf[js.Dynamic]).selectDynamic("CANVAS_RENDERER")).asInstanceOf[Double]
+    @scala.inline
+    def CANVAS_RENDERER_=(x: Double): Unit = (^ .asInstanceOf[js.Dynamic]).updateDynamic("CANVAS_RENDERER")(x.asInstanceOf[js.Any])
+    @scala.inline
+    def VERSION: String = ((^ .asInstanceOf[js.Dynamic]).selectDynamic("VERSION")).asInstanceOf[String]
+    @scala.inline
+    def VERSION_=(x: String): Unit = (^ .asInstanceOf[js.Dynamic]).updateDynamic("VERSION")(x.asInstanceOf[js.Any])
+    @scala.inline
+    def WEBGL_RENDERER: Double = ((^ .asInstanceOf[js.Dynamic]).selectDynamic("WEBGL_RENDERER")).asInstanceOf[Double]
+    @scala.inline
+    def WEBGL_RENDERER_=(x: Double): Unit = (^ .asInstanceOf[js.Dynamic]).updateDynamic("WEBGL_RENDERER")(x.asInstanceOf[js.Any])
+    @JSGlobal("PIXI.blendModes")
     @js.native
     object blendModes extends js.Object {
       /* 1 */ val ADD: typings.phaser.PIXI.blendModes.ADD with Double = js.native
@@ -25,6 +36,7 @@ object global extends js.Object {
       def apply(value: Double): js.UndefOr[typings.phaser.PIXI.blendModes with Double] = js.native
     }
     
+    @JSGlobal("PIXI.scaleModes")
     @js.native
     object scaleModes extends js.Object {
       /* 0 */ val DEFAULT: typings.phaser.PIXI.scaleModes.DEFAULT with Double = js.native
@@ -37,22 +49,28 @@ object global extends js.Object {
   }
   
   /* static members */
-  @js.native
-  object Phaser extends js.Object {
+  object Phaser {
     /**
       * An Animation instance contains a single animation and the controls to play it.
       *
       * It is created by the AnimationManager, consists of Animation.Frame objects and belongs to a single Game Object such as a Sprite.
       */
+    @JSGlobal("Phaser.Animation")
     @js.native
     class Animation ()
       extends typings.phaser.Phaser.Animation
     
-    var VERSION: String = js.native
+    @JSGlobal("Phaser")
+    @js.native
+    val ^ : js.Any = js.native
+    @scala.inline
+    def VERSION: String = ((^ .asInstanceOf[js.Dynamic]).selectDynamic("VERSION")).asInstanceOf[String]
+    @scala.inline
+    def VERSION_=(x: String): Unit = (^ .asInstanceOf[js.Dynamic]).updateDynamic("VERSION")(x.asInstanceOf[js.Any])
   }
   
-  @js.native
-  object p2 extends js.Object {
+  object p2 {
+    @JSGlobal("p2.AABB")
     @js.native
     class AABB ()
       extends typings.phaser.p2.AABB {

@@ -240,7 +240,6 @@ object Phase1ReadTypescript {
       modules.MoveGlobals.apply,
       FlattenTrees.apply,
       T.DefaultedTypeArguments.visitTsParsedFile(scope.caching), //after FlattenTrees
-      T.InlineTrivialParents.visitTsParsedFile(scope.caching), //after FlattenTrees and DefaultedTypeArguments
       if (expandTypeMappings(libName)) T.ExpandTypeMappings.visitTsParsedFile(scope.caching) else identity, // before ExtractInterfaces
       if (expandTypeMappings(libName)) T.ExpandTypeMappings.After.visitTsParsedFile(scope.caching) else identity, // before ExtractInterfaces
       (

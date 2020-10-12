@@ -9,22 +9,26 @@ import scala.scalajs.js
 import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
-@JSImport("aws-sdk", JSImport.Namespace)
-@js.native
-object mod extends js.Object {
+object mod {
+  @JSImport("aws-sdk", "DynamoDB")
   @js.native
   class DynamoDB ()
     extends typings.awsSdk.allMod.DynamoDB {
     def this(options: ClientConfiguration) = this()
   }
   
-  val config: Config = js.native
+  @JSImport("aws-sdk", JSImport.Namespace)
   @js.native
-  object DynamoDB extends js.Object {
+  val ^ : js.Any = js.native
+  @scala.inline
+  def config: Config = ((^ .asInstanceOf[js.Dynamic]).selectDynamic("config")).asInstanceOf[Config]
+  object DynamoDB {
+    @JSImport("aws-sdk", "DynamoDB.Converter")
     @js.native
     class Converter ()
       extends typings.awsSdk.allMod.DynamoDB.Converter
     
+    @JSImport("aws-sdk", "DynamoDB.DocumentClient")
     @js.native
     /**
       * Creates a DynamoDB document client with a set of configuration options.
@@ -35,10 +39,14 @@ object mod extends js.Object {
     }
     
     /* static members */
-    @js.native
-    object Converter extends js.Object {
-      def input(data: js.Any): AttributeValue = js.native
-      def input(data: js.Any, options: ConverterOptions): AttributeValue = js.native
+    object Converter {
+      @JSImport("aws-sdk", "DynamoDB.Converter")
+      @js.native
+      val ^ : js.Any = js.native
+      @scala.inline
+      def input(data: js.Any): AttributeValue = ((^ .asInstanceOf[js.Dynamic]).applyDynamic("input")(data.asInstanceOf[js.Any])).asInstanceOf[AttributeValue]
+      @scala.inline
+      def input(data: js.Any, options: ConverterOptions): AttributeValue = ((^ .asInstanceOf[js.Dynamic]).applyDynamic("input")(data.asInstanceOf[js.Any], options.asInstanceOf[js.Any])).asInstanceOf[AttributeValue]
     }
     
   }

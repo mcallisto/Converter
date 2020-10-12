@@ -5,9 +5,11 @@ import scala.scalajs.js
 import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
-@JSImport("fp-ts/lib/Task", JSImport.Namespace)
-@js.native
-object taskMod extends js.Object {
-  def tryCatch[L, A](f: js.Any, onrejected: js.Function1[/* reason */ js.Object, L]): Either[L, A] = js.native
+object taskMod {
+  @JSImport("fp-ts/lib/Task", JSImport.Namespace)
+  @js.native
+  val ^ : js.Any = js.native
+  @scala.inline
+  def tryCatch[L, A](f: js.Any, onrejected: js.Function1[/* reason */ js.Object, L]): Either[L, A] = ((^ .asInstanceOf[js.Dynamic]).applyDynamic("tryCatch")(f.asInstanceOf[js.Any], onrejected.asInstanceOf[js.Any])).asInstanceOf[Either[L, A]]
 }
 

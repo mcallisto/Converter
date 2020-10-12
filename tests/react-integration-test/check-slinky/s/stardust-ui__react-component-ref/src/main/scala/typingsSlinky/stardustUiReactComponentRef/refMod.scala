@@ -6,9 +6,11 @@ import scala.scalajs.js
 import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
-@JSImport("@stardust-ui/react-component-ref/dist/es/Ref", JSImport.Namespace)
-@js.native
-object refMod extends js.Object {
-  val default: ReactComponentClass[RefProps] = js.native
+object refMod {
+  @JSImport("@stardust-ui/react-component-ref/dist/es/Ref", JSImport.Namespace)
+  @js.native
+  val ^ : js.Any = js.native
+  @scala.inline
+  def default: ReactComponentClass[RefProps] = ((^ .asInstanceOf[js.Dynamic]).selectDynamic("default")).asInstanceOf[ReactComponentClass[RefProps]]
 }
 

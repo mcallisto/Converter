@@ -5,13 +5,18 @@ import scala.scalajs.js
 import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
-@JSImport("react-bootstrap/lib/utils", JSImport.Namespace)
-@js.native
-object utilsMod extends js.Object {
-  def createChainedFunction(funcs: js.Function*): js.Function = js.native
+object utilsMod {
+  @JSImport("react-bootstrap/lib/utils", JSImport.Namespace)
   @js.native
-  object bootstrapUtils extends js.Object {
-    def getBsProps(props: js.Any): BSProps = js.native
+  val ^ : js.Any = js.native
+  @scala.inline
+  def createChainedFunction(funcs: js.Function*): js.Function = ((^ .asInstanceOf[js.Dynamic]).applyDynamic("createChainedFunction")(funcs.asInstanceOf[js.Any])).asInstanceOf[js.Function]
+  object bootstrapUtils {
+    @JSImport("react-bootstrap/lib/utils", "bootstrapUtils")
+    @js.native
+    val ^ : js.Any = js.native
+    @scala.inline
+    def getBsProps(props: js.Any): BSProps = ((^ .asInstanceOf[js.Dynamic]).applyDynamic("getBsProps")(props.asInstanceOf[js.Any])).asInstanceOf[BSProps]
   }
   
 }

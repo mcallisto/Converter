@@ -1,7 +1,5 @@
 package typings.node
 
-import org.scalablytyped.runtime.Instantiable1
-import org.scalablytyped.runtime.Instantiable2
 import typings.node.NodeJS.Global
 import typings.std.ArrayBuffer
 import typings.std.Uint8Array
@@ -9,9 +7,8 @@ import scala.scalajs.js
 import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
-@JSGlobalScope
-@js.native
-object global extends js.Object {
+object global {
+  @JSGlobal("Buffer")
   @js.native
   class Buffer protected () extends NodeBuffer {
     /**
@@ -56,6 +53,7 @@ object global extends js.Object {
     def this(str: String, encoding: String) = this()
   }
   
+  @JSGlobal("SlowBuffer")
   @js.native
   class SlowBuffer protected () extends NodeBuffer {
     def this(array: js.Array[_]) = this()
@@ -70,51 +68,24 @@ object global extends js.Object {
   *                   GLOBAL                      *
   *                                               *
   ************************************************/
-  var global: Global = js.native
+  @scala.inline
+  def global: Global = js.Dynamic.global.selectDynamic("global").asInstanceOf[Global]
+  @scala.inline
+  def global_=(x: Global): Unit = js.Dynamic.global.updateDynamic("global")(x.asInstanceOf[js.Any])
   /**
     * Raw data is stored in instances of the Buffer class.
     * A Buffer is similar to an array of integers but corresponds to a raw memory allocation outside the V8 heap.  A Buffer cannot be resized.
     * Valid string encodings: 'ascii'|'utf8'|'utf16le'|'ucs2'(alias of 'utf16le')|'base64'|'binary'(deprecated)|'hex'
     */
-  @js.native
-  object Buffer
-    extends /**
-    * Allocates a new buffer containing the given {array} of octets.
-    *
-    * @param array The octets to store.
-    */
-  /**
-    * Allocates a new buffer containing the given {str}.
-    *
-    * @param str String to store in buffer.
-    * @param encoding encoding to use, optional.  Default is 'utf8'
-    */
-  /**
-    * Allocates a new buffer of {size} octets.
-    *
-    * @param size count of octets to allocate.
-    */
-  /**
-    * Copies the passed {buffer} data onto a new {Buffer} instance.
-    *
-    * @param buffer The buffer to copy.
-    */
-  /**
-    * Produces a Buffer backed by the same allocated memory as
-    * the given {ArrayBuffer}.
-    *
-    *
-    * @param arrayBuffer The ArrayBuffer with which to share memory.
-    */
-  Instantiable1[
-          (/* array */ js.Array[js.Any]) | (/* arrayBuffer */ ArrayBuffer) | (/* buffer */ typings.node.Buffer) | (/* size */ Double) | (/* str */ String) | (/* array */ Uint8Array), 
-          typings.node.Buffer
-        ]
-       with Instantiable2[/* str */ String, /* encoding */ String, typings.node.Buffer] {
+  object Buffer {
+    @JSGlobal("Buffer")
+    @js.native
+    val ^ : js.Any = js.native
     /**
       * Allocates a new Buffer using an {array} of octets.
       */
-    def from(array: js.Array[_]): typings.node.Buffer = js.native
+    @scala.inline
+    def from(array: js.Array[_]): typings.node.Buffer = ((^ .asInstanceOf[js.Dynamic]).applyDynamic("from")(array.asInstanceOf[js.Any])).asInstanceOf[typings.node.Buffer]
   }
   
   /************************************************
@@ -122,26 +93,28 @@ object global extends js.Object {
   *               GLOBAL INTERFACES               *
   *                                               *
   ************************************************/
-  @js.native
-  object NodeJS extends js.Object {
+  object NodeJS {
+    @JSGlobal("NodeJS.EventEmitter")
     @js.native
     class EventEmitter ()
       extends typings.node.NodeJS.EventEmitter
     
   }
   
-  @js.native
-  object SlowBuffer
-    extends Instantiable1[
-          (/* array */ js.Array[js.Any]) | (/* size */ Double) | (/* str */ String) | (/* size */ Uint8Array), 
-          typings.node.Buffer
-        ]
-       with Instantiable2[/* str */ String, /* encoding */ String, typings.node.Buffer] {
-    def byteLength(string: String): Double = js.native
-    def byteLength(string: String, encoding: String): Double = js.native
-    def concat(list: js.Array[typings.node.Buffer]): typings.node.Buffer = js.native
-    def concat(list: js.Array[typings.node.Buffer], totalLength: Double): typings.node.Buffer = js.native
-    def isBuffer(obj: js.Any): Boolean = js.native
+  object SlowBuffer {
+    @JSGlobal("SlowBuffer")
+    @js.native
+    val ^ : js.Any = js.native
+    @scala.inline
+    def byteLength(string: String): Double = ((^ .asInstanceOf[js.Dynamic]).applyDynamic("byteLength")(string.asInstanceOf[js.Any])).asInstanceOf[Double]
+    @scala.inline
+    def byteLength(string: String, encoding: String): Double = ((^ .asInstanceOf[js.Dynamic]).applyDynamic("byteLength")(string.asInstanceOf[js.Any], encoding.asInstanceOf[js.Any])).asInstanceOf[Double]
+    @scala.inline
+    def concat(list: js.Array[typings.node.Buffer]): typings.node.Buffer = ((^ .asInstanceOf[js.Dynamic]).applyDynamic("concat")(list.asInstanceOf[js.Any])).asInstanceOf[typings.node.Buffer]
+    @scala.inline
+    def concat(list: js.Array[typings.node.Buffer], totalLength: Double): typings.node.Buffer = ((^ .asInstanceOf[js.Dynamic]).applyDynamic("concat")(list.asInstanceOf[js.Any], totalLength.asInstanceOf[js.Any])).asInstanceOf[typings.node.Buffer]
+    @scala.inline
+    def isBuffer(obj: js.Any): Boolean = ((^ .asInstanceOf[js.Dynamic]).applyDynamic("isBuffer")(obj.asInstanceOf[js.Any])).asInstanceOf[Boolean]
   }
   
 }

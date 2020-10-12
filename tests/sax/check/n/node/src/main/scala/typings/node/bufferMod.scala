@@ -1,7 +1,5 @@
 package typings.node
 
-import org.scalablytyped.runtime.Instantiable1
-import org.scalablytyped.runtime.Instantiable2
 import typings.std.ArrayBuffer
 import typings.std.Uint8Array
 import scala.scalajs.js
@@ -13,9 +11,8 @@ import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, J
 *                   MODULES                     *
 *                                               *
 ************************************************/
-@JSImport("buffer", JSImport.Namespace)
-@js.native
-object bufferMod extends js.Object {
+object bufferMod {
+  @JSImport("buffer", "Buffer")
   @js.native
   class Buffer protected () extends NodeBuffer {
     /**
@@ -60,6 +57,7 @@ object bufferMod extends js.Object {
     def this(str: String, encoding: String) = this()
   }
   
+  @JSImport("buffer", "SlowBuffer")
   @js.native
   class SlowBuffer protected () extends NodeBuffer {
     def this(array: js.Array[_]) = this()
@@ -69,60 +67,38 @@ object bufferMod extends js.Object {
     def this(str: String, encoding: String) = this()
   }
   
-  var INSPECT_MAX_BYTES: Double = js.native
+  @JSImport("buffer", JSImport.Namespace)
   @js.native
-  object Buffer
-    extends /**
-    * Allocates a new buffer containing the given {array} of octets.
-    *
-    * @param array The octets to store.
-    */
-  /**
-    * Allocates a new buffer containing the given {str}.
-    *
-    * @param str String to store in buffer.
-    * @param encoding encoding to use, optional.  Default is 'utf8'
-    */
-  /**
-    * Allocates a new buffer of {size} octets.
-    *
-    * @param size count of octets to allocate.
-    */
-  /**
-    * Copies the passed {buffer} data onto a new {Buffer} instance.
-    *
-    * @param buffer The buffer to copy.
-    */
-  /**
-    * Produces a Buffer backed by the same allocated memory as
-    * the given {ArrayBuffer}.
-    *
-    *
-    * @param arrayBuffer The ArrayBuffer with which to share memory.
-    */
-  Instantiable1[
-          (/* array */ js.Array[js.Any]) | (/* arrayBuffer */ ArrayBuffer) | (/* buffer */ typings.node.Buffer) | (/* size */ Double) | (/* str */ String) | (/* array */ Uint8Array), 
-          typings.node.Buffer
-        ]
-       with Instantiable2[/* str */ String, /* encoding */ String, typings.node.Buffer] {
+  val ^ : js.Any = js.native
+  @scala.inline
+  def INSPECT_MAX_BYTES: Double = ((^ .asInstanceOf[js.Dynamic]).selectDynamic("INSPECT_MAX_BYTES")).asInstanceOf[Double]
+  @scala.inline
+  def INSPECT_MAX_BYTES_=(x: Double): Unit = (^ .asInstanceOf[js.Dynamic]).updateDynamic("INSPECT_MAX_BYTES")(x.asInstanceOf[js.Any])
+  object Buffer {
+    @JSImport("buffer", "Buffer")
+    @js.native
+    val ^ : js.Any = js.native
     /**
       * Allocates a new Buffer using an {array} of octets.
       */
-    def from(array: js.Array[_]): typings.node.Buffer = js.native
+    @scala.inline
+    def from(array: js.Array[_]): typings.node.Buffer = ((^ .asInstanceOf[js.Dynamic]).applyDynamic("from")(array.asInstanceOf[js.Any])).asInstanceOf[typings.node.Buffer]
   }
   
-  @js.native
-  object SlowBuffer
-    extends Instantiable1[
-          (/* array */ js.Array[js.Any]) | (/* size */ Double) | (/* str */ String) | (/* size */ Uint8Array), 
-          typings.node.Buffer
-        ]
-       with Instantiable2[/* str */ String, /* encoding */ String, typings.node.Buffer] {
-    def byteLength(string: String): Double = js.native
-    def byteLength(string: String, encoding: String): Double = js.native
-    def concat(list: js.Array[typings.node.Buffer]): typings.node.Buffer = js.native
-    def concat(list: js.Array[typings.node.Buffer], totalLength: Double): typings.node.Buffer = js.native
-    def isBuffer(obj: js.Any): Boolean = js.native
+  object SlowBuffer {
+    @JSImport("buffer", "SlowBuffer")
+    @js.native
+    val ^ : js.Any = js.native
+    @scala.inline
+    def byteLength(string: String): Double = ((^ .asInstanceOf[js.Dynamic]).applyDynamic("byteLength")(string.asInstanceOf[js.Any])).asInstanceOf[Double]
+    @scala.inline
+    def byteLength(string: String, encoding: String): Double = ((^ .asInstanceOf[js.Dynamic]).applyDynamic("byteLength")(string.asInstanceOf[js.Any], encoding.asInstanceOf[js.Any])).asInstanceOf[Double]
+    @scala.inline
+    def concat(list: js.Array[typings.node.Buffer]): typings.node.Buffer = ((^ .asInstanceOf[js.Dynamic]).applyDynamic("concat")(list.asInstanceOf[js.Any])).asInstanceOf[typings.node.Buffer]
+    @scala.inline
+    def concat(list: js.Array[typings.node.Buffer], totalLength: Double): typings.node.Buffer = ((^ .asInstanceOf[js.Dynamic]).applyDynamic("concat")(list.asInstanceOf[js.Any], totalLength.asInstanceOf[js.Any])).asInstanceOf[typings.node.Buffer]
+    @scala.inline
+    def isBuffer(obj: js.Any): Boolean = ((^ .asInstanceOf[js.Dynamic]).applyDynamic("isBuffer")(obj.asInstanceOf[js.Any])).asInstanceOf[Boolean]
   }
   
 }

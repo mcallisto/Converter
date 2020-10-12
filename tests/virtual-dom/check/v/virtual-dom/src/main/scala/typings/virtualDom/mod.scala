@@ -4,9 +4,11 @@ import scala.scalajs.js
 import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
-@JSImport("virtual-dom/h", JSImport.Namespace)
-@js.native
-object mod extends js.Object {
-  def apply(): js.Any = js.native
+object mod {
+  @JSImport("virtual-dom/h", JSImport.Namespace)
+  @js.native
+  val ^ : js.Any = js.native
+  @scala.inline
+  def apply(): js.Any = ((^ .asInstanceOf[js.Dynamic]).apply()).asInstanceOf[js.Any]
 }
 

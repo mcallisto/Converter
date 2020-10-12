@@ -5,11 +5,12 @@ import scala.scalajs.js
 import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
-@JSGlobalScope
-@js.native
-object global extends js.Object {
-  val newPerson: Instantiable0[Person] = js.native
-  val proxy: ProxiedPerson = js.native
-  def foo(): Person = js.native
+object global {
+  @scala.inline
+  def foo(): Person = js.Dynamic.global.applyDynamic("foo")().asInstanceOf[Person]
+  @scala.inline
+  def newPerson: Instantiable0[Person] = js.Dynamic.global.selectDynamic("newPerson").asInstanceOf[Instantiable0[Person]]
+  @scala.inline
+  def proxy: ProxiedPerson = js.Dynamic.global.selectDynamic("proxy").asInstanceOf[ProxiedPerson]
 }
 

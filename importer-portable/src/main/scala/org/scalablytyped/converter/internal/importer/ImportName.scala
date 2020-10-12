@@ -12,7 +12,8 @@ object ImportName {
     Some(apply(x))
 
   def apply(i: TsIdentSimple): Name =
-    Name.necessaryRewrite(Name(i.value))
+    if (i === TsIdent.Apply) Name.APPLY
+    else Name.necessaryRewrite(Name(i.value))
 
   def apply(i: TsIdentLibrary): Name =
     Name.necessaryRewrite(Name(AdaptiveNamingImport.variantsFor(i, hasModuleParent = false, Set()).head))

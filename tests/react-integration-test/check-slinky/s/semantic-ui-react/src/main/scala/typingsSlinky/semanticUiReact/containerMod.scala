@@ -6,9 +6,11 @@ import scala.scalajs.js
 import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
-@JSImport("semantic-ui-react/dist/commonjs/elements/Container", JSImport.Namespace)
-@js.native
-object containerMod extends js.Object {
-  val default: ReactComponentClass[ContainerProps] = js.native
+object containerMod {
+  @JSImport("semantic-ui-react/dist/commonjs/elements/Container", JSImport.Namespace)
+  @js.native
+  val ^ : js.Any = js.native
+  @scala.inline
+  def default: ReactComponentClass[ContainerProps] = ((^ .asInstanceOf[js.Dynamic]).selectDynamic("default")).asInstanceOf[ReactComponentClass[ContainerProps]]
 }
 
