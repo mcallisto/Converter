@@ -1,6 +1,6 @@
 organization := "org.scalablytyped"
 name := "keyof"
-version := "0.0-unknown-a5f2a0"
+version := "0.0-unknown-/mcallisto/Converter.git-19700101Z-a5f2a0"
 scalaVersion := "2.13.3"
 enablePlugins(ScalaJSPlugin)
 libraryDependencies ++= Seq(

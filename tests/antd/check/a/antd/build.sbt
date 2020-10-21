@@ -1,6 +1,6 @@
 organization := "org.scalablytyped"
 name := "antd"
-version := "4.3.1-711f3a"
+version := "4.3.1-/mcallisto/Converter.git-19700101Z-bf145b"
 scalaVersion := "2.13.3"
 enablePlugins(ScalaJSPlugin)
 libraryDependencies ++= Seq(

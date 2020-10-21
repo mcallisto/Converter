@@ -1,6 +1,6 @@
 organization := "org.scalablytyped"
 name := "interface-package"
-version := "0.0-unknown-4169be"
+version := "0.0-unknown-/mcallisto/Converter.git-19700101Z-4169be"
 scalaVersion := "2.13.3"
 enablePlugins(ScalaJSPlugin)
 libraryDependencies ++= Seq(
